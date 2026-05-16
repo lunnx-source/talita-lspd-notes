@@ -6,12 +6,13 @@
     <title>Talita Note - LSPD Field Notes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Patrick+Hand&family=Short+Stack&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         body {
             background-color: #f7e8ee;
-            font-family: 'Short Stack', Arial, sans-serif;
+            font-family: 'Quicksand', Arial, sans-serif;
+            font-weight: 500;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -46,30 +47,33 @@
         /* Efek Garis Tulis Soft Pink */
         .notepad.lined-active {
             background-image: linear-gradient(#fbcfe8 1px, transparent 1px);
-            background-size: 100% 28px;
-            line-height: 28px;
+            background-size: 100% 32px;
+            line-height: 32px;
         }
+
         /* Aksesoris Stiker Lucu di Notepad */
         .notepad::after {
-            content: '👮‍♀️ 🚓 💖 🌸 ⭐'; /* Stiker di pojok kanan bawah */
+            content: '👮‍♀️ '; /* Stiker Polisi Girly di kanan bawah */
             position: absolute;
             bottom: 20px;
             right: 20px;
             font-size: 24px;
             opacity: 0.8;
         }
+
         h1 {
-            font-family: 'Patrick Hand', cursive;
-            font-size: 36px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 38px;
             margin: 0;
             color: #db2777; 
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
         .subtitle {
-            font-size: 13px;
-            color: #65a30d; 
-            margin-top: 4px;
+            font-size: 14px;
+            color: #be185d; 
+            margin-top: 6px;
             margin-bottom: 20px;
             font-style: italic;
             line-height: 1.4;
@@ -93,7 +97,8 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-family: Arial, sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
             color: #be185d;
             transition: all 0.2s;
         }
@@ -104,14 +109,15 @@
         }
 
         .tag-label {
+            font-family: 'Fredoka', sans-serif;
             border: 1px dashed #db2777;
             border-radius: 6px;
-            padding: 2px 10px;
-            font-size: 14px;
+            padding: 4px 12px;
+            font-size: 15px;
             display: inline-block;
             margin-top: 15px;
             margin-bottom: 10px;
-            font-weight: bold;
+            font-weight: 600;
             background: #fff;
             color: #db2777;
         }
@@ -128,48 +134,53 @@
             border-left: 4px solid #facc15;
         }
 
-        /* Perekat Washi Tape Pink Transparan */
+        /* Washi Tape di Atas Catatan */
         .sticky-note::before {
             content: '';
             position: absolute;
-            top: -10px;
+            top: -12px;
             left: 20px;
-            width: 50px;
-            height: 15px;
-            background-color: rgba(244, 114, 182, 0.5); 
-            transform: rotate(-2deg);
+            width: 70px;
+            height: 20px;
+            background-color: rgba(244, 114, 182, 0.7); 
+            transform: rotate(-1deg);
+            border-radius: 3px;
+            background-image: radial-gradient(#fffbeb 1px, transparent 1px);
+            background-size: 6px 6px;
         }
 
         .sticky-note p {
             margin: 0 0 10px 0;
-            font-size: 14px;
+            font-size: 15px;
             color: #3f2b32;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Font Tulisan Tangan Interaktif untuk Isi Catatan */
-        .handwriting-text {
-            font-family: 'Caveat', cursive;
-            font-size: 22px;
+        /* Font Utama Konten - Sangat Jelas Dibaca */
+        .note-content {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
             color: #111;
-            line-height: 1.4;
+            line-height: 1.6;
         }
 
-        .alt-handwriting {
-            font-family: 'Patrick Hand', cursive !important;
-            font-size: 19px !important;
+        /* Font Alternatif Tombol Toggle - Tetap Jelas Menggunakan Fredoka */
+        .alt-font {
+            font-family: 'Fredoka', sans-serif !important;
+            font-size: 15px !important;
         }
 
         /* Grid Layout untuk menyusun Kode agar Rapi seperti Dokumen Asli */
         .code-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 8px;
             margin-top: 10px;
         }
 
         .code-item {
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         ul {
@@ -182,15 +193,17 @@
         }
 
         .footer-note {
+            font-family: 'Fredoka', sans-serif;
             margin-top: 40px;
             border-top: 1px dashed #f472b6;
             padding-top: 10px;
-            font-size: 13px;
+            font-size: 15px;
             color: #db2777;
             font-style: italic;
             text-align: right;
         }
-         /* Menambahkan Boneka dan Stiker Bertema Police Girly */
+
+        /* Menambahkan Boneka dan Stiker Bertema Police Girly */
         .sticker {
             position: absolute;
             opacity: 0.9;
@@ -227,7 +240,7 @@
             color: #f472b6;
         }
 
-        /* Aksen Pembatas Pink🎀 */
+        /* Aksen Pembatas Pink 🚓 👮‍♀️ */
         .section-divider {
             height: 2px;
             background-color: #fbcfe8;
@@ -237,7 +250,7 @@
         }
         
         .section-divider::after {
-            content: '🚓 👮‍♀️'; /* Emote Mobil & Polisi Girly */
+            content: '🚓 👮‍♀️'; 
             position: absolute;
             top: -12px;
             left: 50%;
@@ -246,207 +259,217 @@
             padding: 0 10px;
             font-size: 20px;
         }
+
     </style>
 </head>
 <body>
 
     <div class="notepad lined-active" id="notePaper">
         
-        <div class="sticker sticker-toys">🐰👮‍♀️🐻👮</div> <div class="sticker sticker-badge">💖🌟</div> <div class="sticker sticker-car">🚓💨🎀</div> <div class="sticker sticker-props">🔗⭐</div> <h1>Talita LSPD Notes</h1>
+        <div class="sticker sticker-toys">🐰👮‍♀️ Bear 👮‍♂️🐻</div> 
+        <div class="sticker sticker-badge">💖🌟🎖️</div> 
+        <div class="sticker sticker-car">🚓💨✨</div> 
+        <div class="sticker sticker-props">🔗⭐👮</div> 
+
+        <h1>Talita LSPD Notes</h1>
         <div class="subtitle">
-            "ini hanya catatan kecil , sisanya belajar banyak dari pengalaman"
+            [span_0](start_span)"ini hanya catatan kecil, sisanya belajar banyak dari pengalaman"[span_0](end_span)
         </div>
 
         <div class="button-group">
             <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
             <button class="btn" onclick="toggleLines()">📄 Toggle Lines</button>
-            <button class="btn" onclick="toggleHandwriting()">✍️ Toggle Handwriting</button>
+            <button class="btn" onclick="toggleFont()">🔤 Toggle Font Style</button>
         </div>
 
-        <div class="tag-label">Miranda Rights</div>
+        <div class="tag-label">Miranda Rights 👮‍♀️</div>
         <div class="sticky-note">
-            <p>wajib membacakan miranda rights jika ingin cuff suspect:</p>
-            <p class="handwriting-text note-content">
-                "You have the right to remain silent. Anything you say can and will be used against you in the court of law. You have the right to an attorney. If you cannot afford one, one will be provided for you."
+            [span_1](start_span)<p style="font-weight: bold; color: #db2777;">wajib membacakan miranda rights jika ingin cuff suspect:</p>[span_1](end_span)
+            <p class="note-content">
+                [span_2](start_span)"You have the right to remain silent. Anything you say can and will be used against you in the court of law. You have the right to an attorney. If you cannot afford one, one will be provided for you."[span_2](end_span)
             </p>
         </div>
 
-        <div class="tag-label">Ten Codes</div>
+        <div class="tag-label">Ten Codes 📋</div>
         <div class="sticky-note">
-            <div class="handwriting-text note-content code-grid">
-                <div class="code-item"><strong>10-1:</strong> Meet me at...</div>
-                <div class="code-item"><strong>10-2:</strong> Good signal</div>
-                <div class="code-item"><strong>10-3:</strong> Stop Transmitting/stop pembicaraan di radio</div>
-                <div class="code-item"><strong>10-4:</strong> Roger That (OK)</div>
-                <div class="code-item"><strong>10-7:</strong> Out of Service</div>
-                <div class="code-item"><strong>10-8:</strong> In Service</div>
-                <div class="code-item"><strong>10-9:</strong> Repeat</div>
-                <div class="code-item"><strong>10-10:</strong> Fight in Progress</div>
-                <div class="code-item"><strong>10-12:</strong> Standby</div>
-                <div class="code-item"><strong>10-13A:</strong> Officer Down (Emergency)</div>
-                <div class="code-item"><strong>10-13B:</strong> Officer Down (Non-Emergency)</div>
-                <div class="code-item"><strong>10-14:</strong> EMS Down</div>
-                <div class="code-item"><strong>10-18:</strong> Quickly</div>
-                <div class="code-item"><strong>10-20:</strong> Location</div>
-                <div class="code-item"><strong>10-22:</strong> Cancel</div>
-                <div class="code-item"><strong>10-23:</strong> Arriving on Location</div>
-                <div class="code-item"><strong>10-28:</strong> Info Plate</div>
-                <div class="code-item"><strong>10-29:</strong> Checking Criminal Records</div>
-                <div class="code-item"><strong>10-31A:</strong> Crime in progress (House Robbery)</div>
-                <div class="code-item"><strong>10-31B:</strong> Crime in progress (Store Robbery)</div>
-                <div class="code-item"><strong>10-32:</strong> Man with Firearms</div>
-                <div class="code-item"><strong>10-34:</strong> Suspicious Behaviour (Narcotics)</div>
-                <div class="code-item"><strong>10-37:</strong> Suspicious Vehicle (Investigation)</div>
-                <div class="code-item"><strong>10-38:</strong> Stopping Suspicious Vehicle (Felony)</div>
-                <div class="code-item"><strong>10-41:</strong> On Duty</div>
-                <div class="code-item"><strong>10-42:</strong> Off Duty</div>
-                <div class="code-item"><strong>10-45:</strong> Illegal Hunting</div>
-                <div class="code-item"><strong>10-47:</strong> Injured Person</div>
-                <div class="code-item"><strong>10-50:</strong> Accident</div>
-                <div class="code-item"><strong>10-52:</strong> EMS Needed</div>
-                <div class="code-item"><strong>10-55:</strong> Traffic Stop</div>
-                <div class="code-item"><strong>10-57:</strong> Chase in Progress/dalam situasi pengejaran</div>
-                <div class="code-item"><strong>10-60:</strong> informasi kendaraan</div>
-                <div class="code-item"><strong>10-61:</strong> informasi suspect </div>
-                <div class="code-item"><strong>10-70:</strong> kebakaran terjadi</div>
-                <div class="code-item"><strong>10-71:</strong> Shots Fired/penembakan</div>
-                <div class="code-item"><strong>10-74:</strong> Negative</div>
-                <div class="code-item"><strong>10-76:</strong> En Route</div>
-                <div class="code-item"><strong>10-77:</strong> Need Assistance (Not Emergency)</div>
-                <div class="code-item"><strong>10-78:</strong> Need Assistance (Emergency)</div>
-                <div class="code-item"><strong>10-80:</strong> Officer in Danger, can't respond</div>
-                <div class="code-item"><strong>10-89:</strong> Bomb Threat</div>
-                <div class="code-item"><strong>10-90:</strong> Robbery in Progress (Bank/Jewel)</div>
-                <div class="code-item"><strong>10-94:</strong> Drag Racing in Progress</div>
-                <div class="code-item"><strong>10-95:</strong> Prisoner / suspect </div>
-                <div class="code-item"><strong>10-97:</strong> Unauthorized access</div>
-                <div class="code-item"><strong>10-98:</strong> Jailbreak</div>
-                <div class="code-item"><strong>10-99:</strong> Clearing off</div>
+            <div class="note-content code-grid">
+                [span_3](start_span)<div class="code-item"><strong>10-1:</strong> Meet me at...</div>[span_3](end_span)
+                [span_4](start_span)<div class="code-item"><strong>10-2:</strong> Good signal</div>[span_4](end_span)
+                [span_5](start_span)<div class="code-item"><strong>10-3:</strong> Stop Transmitting/stop pembicaraan di radio</div>[span_5](end_span)
+                [span_6](start_span)<div class="code-item"><strong>10-4:</strong> Roger That (OK)</div>[span_6](end_span)
+                [span_7](start_span)<div class="code-item"><strong>10-7:</strong> Out of Service</div>[span_7](end_span)
+                [span_8](start_span)<div class="code-item"><strong>10-8:</strong> In Service</div>[span_8](end_span)
+                [span_9](start_span)<div class="code-item"><strong>10-9:</strong> Repeat</div>[span_9](end_span)
+                [span_10](start_span)<div class="code-item"><strong>10-10:</strong> Fight in Progress</div>[span_10](end_span)
+                [span_11](start_span)<div class="code-item"><strong>10-12:</strong> Standby</div>[span_11](end_span)
+                [span_12](start_span)<div class="code-item"><strong>10-13A:</strong> Officer Down (Emergency)</div>[span_12](end_span)
+                [span_13](start_span)<div class="code-item"><strong>10-13B:</strong> Officer Down (Non-Emergency)</div>[span_13](end_span)
+                [span_14](start_span)<div class="code-item"><strong>10-14:</strong> EMS Down</div>[span_14](end_span)
+                [span_15](start_span)<div class="code-item"><strong>10-18:</strong> Quickly</div>[span_15](end_span)
+                [span_16](start_span)<div class="code-item"><strong>10-20:</strong> Location</div>[span_16](end_span)
+                [span_17](start_span)<div class="code-item"><strong>10-22:</strong> Cancel</div>[span_17](end_span)
+                [span_18](start_span)<div class="code-item"><strong>10-23:</strong> Arriving on Location</div>[span_18](end_span)
+                [span_19](start_span)<div class="code-item"><strong>10-28:</strong> Info Plate</div>[span_19](end_span)
+                [span_20](start_span)<div class="code-item"><strong>10-29:</strong> Checking Criminal Records</div>[span_20](end_span)
+                [span_21](start_span)<div class="code-item"><strong>10-31A:</strong> Crime in progress (House Robbery)</div>[span_21](end_span)
+                [span_22](start_span)<div class="code-item"><strong>10-31B:</strong> Crime in progress (Store Robbery)</div>[span_22](end_span)
+                [span_23](start_span)<div class="code-item"><strong>10-32:</strong> Man with Firearms</div>[span_23](end_span)
+                [span_24](start_span)<div class="code-item"><strong>10-34:</strong> Suspicious Behaviour (Narcotics)</div>[span_24](end_span)
+                [span_25](start_span)<div class="code-item"><strong>10-37:</strong> Suspicious Vehicle (Investigation)</div>[span_25](end_span)
+                [span_26](start_span)<div class="code-item"><strong>10-38:</strong> Stopping Suspicious Vehicle (Felony)</div>[span_26](end_span)
+                [span_27](start_span)<div class="code-item"><strong>10-41:</strong> On Duty</div>[span_27](end_span)
+                [span_28](start_span)<div class="code-item"><strong>10-42:</strong> Off Duty</div>[span_28](end_span)
+                [span_29](start_span)<div class="code-item"><strong>10-45:</strong> Illegal Hunting</div>[span_29](end_span)
+                [span_30](start_span)<div class="code-item"><strong>10-47:</strong> Injured Person</div>[span_30](end_span)
+                [span_31](start_span)<div class="code-item"><strong>10-50:</strong> Accident</div>[span_31](end_span)
+                [span_32](start_span)<div class="code-item"><strong>10-52:</strong> EMS Needed</div>[span_32](end_span)
+                [span_33](start_span)<div class="code-item"><strong>10-55:</strong> Traffic Stop</div>[span_33](end_span)
+                [span_34](start_span)<div class="code-item"><strong>10-57:</strong> Chase in Progress/dalam situasi pengejaran</div>[span_34](end_span)
+                [span_35](start_span)<div class="code-item"><strong>10-60:</strong> informasi kendaraan</div>[span_35](end_span)
+                [span_36](start_span)<div class="code-item"><strong>10-61:</strong> informasi suspect</div>[span_36](end_span)
+                [span_37](start_span)<div class="code-item"><strong>10-70:</strong> kebakaran terjadi</div>[span_37](end_span)
+                [span_38](start_span)<div class="code-item"><strong>10-71:</strong> Shots Fired/penembakan</div>[span_38](end_span)
+                [span_39](start_span)<div class="code-item"><strong>10-74:</strong> Negative</div>[span_39](end_span)
+                [span_40](start_span)<div class="code-item"><strong>10-76:</strong> En Route</div>[span_40](end_span)
+                [span_41](start_span)<div class="code-item"><strong>10-77:</strong> Need Assistance (Not Emergency)</div>[span_41](end_span)
+                [span_42](start_span)<div class="code-item"><strong>10-78:</strong> Need Assistance (Emergency)</div>[span_42](end_span)
+                [span_43](start_span)<div class="code-item"><strong>10-80:</strong> Officer in Danger, can't respond</div>[span_43](end_span)
+                [span_44](start_span)<div class="code-item"><strong>10-89:</strong> Bomb Threat</div>[span_44](end_span)
+                [span_45](start_span)<div class="code-item"><strong>10-90:</strong> Robbery in Progress (Bank/Jewel)</div>[span_45](end_span)
+                [span_46](start_span)<div class="code-item"><strong>10-94:</strong> Drag Racing in Progress</div>[span_46](end_span)
+                [span_47](start_span)<div class="code-item"><strong>10-95:</strong> Prisoner/suspect in Custody</div>[span_47](end_span)
+                [span_48](start_span)<div class="code-item"><strong>10-97:</strong> Unauthorized access</div>[span_48](end_span)
+                [span_49](start_span)<div class="code-item"><strong>10-98:</strong> Jailbreak</div>[span_49](end_span)
+                [span_50](start_span)<div class="code-item"><strong>10-99:</strong> Clearing off</div>[span_50](end_span)
             </div>
         </div>
 
-        <div class="tag-label">Response Codes & Radio Usage</div>
+        <div class="section-divider"></div>
+
+        <div class="tag-label">Response Codes & Radio Usage 🎙️</div>
         <div class="sticky-note">
-            <div class="handwriting-text note-content">
+            <div class="note-content">
                 <ul>
-                    <li><strong>Code 1:</strong> Non-emergency response : tidak pakai sirine dan lampu ratatoar.</li>
-                    <li><strong>Code 2:</strong> Emergency response : hanya menggunakan lampu ratatoar.</li>
-                    <li><strong>Code 3:</strong> Emergency response : sirine dan lampu ratatoar menyala.</li>
-                    <li><strong>Code 4:</strong> situasi sudah aman.</li>
-                    <li><strong>Code 5:</strong> Detective under investigation.</li>
-                    <li><strong>Code 6:</strong> melakukan investigasi/pencarian baik di dalam kendaraan ataupun on foot.</li>
-                    <li><strong>Code 7:</strong> Meal Break.</li>
+                    [span_51](start_span)<li><strong>Code 1:</strong> Non-emergency response: tidak pakai sirine dan lampu ratatoar.</li>[span_51](end_span)
+                    [span_52](start_span)<li><strong>Code 2:</strong> Emergency response: hanya menggunakan lampu ratatoar.</li>[span_52](end_span)
+                    [span_53](start_span)<li><strong>Code 3:</strong> Emergency response: sirine dan lampu ratatoar menyala.</li>[span_53](end_span)
+                    [span_54](start_span)<li><strong>Code 4:</strong> situasi sudah aman.</li>[span_54](end_span)
+                    [span_55](start_span)<li><strong>Code 5:</strong> Detective under investigation.</li>[span_55](end_span)
+                    [span_56](start_span)<li><strong>Code 6:</strong> melakukan investigasi/pencarian baik di dalam kendaraan ataupun on foot.</li>[span_56](end_span)
+                    [span_57](start_span)<li><strong>Code 7:</strong> Meal Break.</li>[span_57](end_span)
                 </ul>
-                <p style="margin-top:15px; font-weight:bold; color:#be185d;">How to Use 10-Codes / Response Codes on Radio</p>
+                
+                <p style="margin-top:15px; font-weight:bold; color:#be185d;">How to Use 10-Codes / Response Codes on Radio 🚨</p>
                 <p><strong>Patroli Reporting:</strong><br>
-                "Dispatch, this is 72ADAM505 doing 10-08 at municipal area , ready for any situation."</p>
+                [span_58](start_span)"Dispatch, this is 72ADAM505 doing 10-08 at municipal area, ready for any situation."</p>[span_58](end_span)
                 
-                <p><strong>Updating reporting dari 55 / traffic stop berubah menjadi pengejaran 57:</strong><br>
-                "Dispatch, for the last 10-55 situation on [nama jalan], it's now changing into active 10-57 (pursuit). Requesting 10-78 (backup) on my 20 (location). Suspect is now heading (arah pelarian)."</p>
+                <p><strong>Updating reporting dari 55/traffic stop berubah menjadi pengejaran 57:</strong><br>
+                [span_59](start_span)"Dispatch, for the last 10-55 situation on [nama jalan], it's now changing into active 10-57 (pursuit). Requesting 10-78 (backup) on my 20 (location). Suspect is now heading (arah pelarian)."</p>[span_59](end_span)
                 
-                <p><em>Detail: "Suspect is now heading West on Vespucci Blvd, taking left, heading South on San Andreas Ave."</em></p>
+                [span_60](start_span)<p><em>Detail: "Suspect is now heading West on Vespucci Blvd, taking left, heading South on San Andreas Ave."</em></p>[span_60](end_span)
                 
-                <p style="margin-top:10px; font-weight:bold;">Update structure, David Reed's preference:</p>
+                [span_61](start_span)<p style="margin-top:10px; font-weight:bold;">Update structure, David Reed's preference:</p>[span_61](end_span)
                 <ul>
-                    <li>Action (Tindakan) - contoh: heading / belok kiri</li>
-                    <li>Arah mata angin - North / South / East / West</li>
-                    <li>Nama jalan - Lokasi atau jalur</li>
-                    <li>Informasi tambahan (opsional) - landmark, lalu lintas, deskripsi suspect</li>
+                    [span_62](start_span)<li>Action (Tindakan) - contoh: heading / belok kiri</li>[span_62](end_span)
+                    [span_63](start_span)<li>Arah mata angin - North / South / East / West</li>[span_63](end_span)
+                    [span_64](start_span)<li>Nama jalan - Lokasi atau jalur</li>[span_64](end_span)
+                    [span_65](start_span)<li>Informasi tambahan (opsional) - landmark, lalu lintas, deskripsi suspect</li>[span_65](end_span)
                 </ul>
             </div>
         </div>
 
-        <div class="tag-label">Callsign System & Pursuit Behavior</div>
+        <div class="tag-label">Callsign System & Pursuit Behavior 🏎️</div>
         <div class="sticky-note">
-            <div class="handwriting-text note-content">
-                <p style="font-weight:bold; color:#be185d;">Callsign System</p>
+            <div class="note-content">
+                <p style="font-weight:bold; color:#be185d;">Callsign System 📞</p>
                 <div class="code-grid">
-                    <div class="code-item">• High Command = STAFF</div>
-                    <div class="code-item">• Command = VICTOR</div>
-                    <div class="code-item">• SPV-NCO (Partner) = ADAM</div>
-                    <div class="code-item">• SPV-NCO (Solo) = LINCOLN</div>
-                    <div class="code-item">• Interceptor = HENRY</div>
-                    <div class="code-item">• Interceptor HC = GOLF</div>
-                    <div class="code-item">• Motorcycle = MARY</div>
-                    <div class="code-item">• Metro = DAVID</div>
-                    <div class="code-item">• Bearcat = BEAST</div>
-                    <div class="code-item">• K9 Unit = NORA</div>
-                    <div class="code-item">• ASD = AIR</div>
-                    <div class="code-item">• ASD High Command = AIR-STAFF</div>
-                    <div class="code-item">• Detective = GEORGE</div>
+                    [span_66](start_span)<div class="code-item">• High Command = STAFF</div>[span_66](end_span)
+                    [span_67](start_span)<div class="code-item">• Command = VICTOR</div>[span_67](end_span)
+                    [span_68](start_span)<div class="code-item">• SPV-NCO (Partner) = ADAM</div>[span_68](end_span)
+                    [span_69](start_span)<div class="code-item">• SPV-NCO (Solo) = LINCOLN</div>[span_69](end_span)
+                    [span_70](start_span)<div class="code-item">• Interceptor = HENRY</div>[span_70](end_span)
+                    [span_71](start_span)<div class="code-item">• Interceptor HC = GOLF</div>[span_71](end_span)
+                    [span_72](start_span)<div class="code-item">• Motorcycle = MARY</div>[span_72](end_span)
+                    [span_73](start_span)<div class="code-item">• Metro = DAVID</div>[span_73](end_span)
+                    [span_74](start_span)<div class="code-item">• Bearcat = BEAST</div>[span_74](end_span)
+                    [span_75](start_span)<div class="code-item">• K9 Unit = NORA</div>[span_75](end_span)
+                    [span_76](start_span)<div class="code-item">• ASD = AIR</div>[span_76](end_span)
+                    [span_77](start_span)<div class="code-item">• ASD High Command = AIR-STAFF</div>[span_77](end_span)
+                    [span_78](start_span)<div class="code-item">• Detective = GEORGE</div>[span_78](end_span)
                 </div>
                 
-                <p style="margin-top:15px; font-weight:bold;">How to Use Callsign (Example badge number: 72505)</p>
+                [span_79](start_span)<p style="margin-top:15px; font-weight:bold;">How to Use Callsign (Example badge number: 72505)</p>[span_79](end_span)
                 <ul>
-                    <li><strong>Solo (LINCOLN):</strong> 71-Lincoln-72 (Using 71 as the station callsign per SPV note).</li>
-                    <li><strong>With Partner (ADAM):</strong> 71-Adam-72</li>
+                    [span_80](start_span)<li><strong>Solo (LINCOLN):</strong> 71-Lincoln-72 (Using 71 as the station callsign per SPV note).</li>[span_80](end_span)
+                    [span_81](start_span)<li><strong>With Partner (ADAM):</strong> 71-Adam-72</li>[span_81](end_span)
                 </ul>
 
-                <p style="margin-top:15px; font-weight:bold; color:#be185d;">Pursuit Behavior - Unit Roles</p>
+                <p style="margin-top:15px; font-weight:bold; color:#be185d;">Pursuit Behavior - Unit Roles ⭐</p>
                 <ul>
-                    <li><strong>Primary Unit:</strong> Mobil utama yang akan mengejar.</li>
-                    <li><strong>Secondary Unit:</strong> Membantu komunikasi dan call-out.</li>
-                    <li><strong>Alternate Unit:</strong> Siap untuk block road atau deploy spike strip.</li>
+                    [span_82](start_span)<li><strong>Primary Unit:</strong> Mobil utama yang akan mengejar.</li>[span_82](end_span)
+                    [span_83](start_span)<li><strong>Secondary Unit:</strong> Membantu komunikasi dan call-out.</li>[span_83](end_span)
+                    [span_84](start_span)<li><strong>Alternate Unit:</strong> Siap untuk block road atau deploy spike strip.</li>[span_84](end_span)
                 </ul>
-                <p><strong>Selama Pengejaran:</strong> Memberikan update berkala (arah, kecepatan, situasi lalu lintas), serta menjaga jarak aman dan tidak saling menabrak.</p>
-                <p><strong>Taktik Khusus:</strong> Spike Strip, PIT Maneuver, Box Car. *(Hanya boleh dilakukan dengan izin dari IC atau Sergeant).*</p>
+                [span_85](start_span)<p><strong>Selama Pengejaran:</strong> Memberikan update berkala (arah, kecepatan, situasi lalu lintas), serta menjaga jarak aman dan tidak saling menabrak.</p>[span_85](end_span)
+                <p><strong>Taktik Khusus:</strong> Spike Strip, PIT Maneuver, Box Car. *[span_86](start_span)(Hanya boleh dilakukan dengan izin dari IC atau Sergeant).*</p>[span_86](end_span)
             </div>
         </div>
 
-        <div class="tag-label">Incident Commander (IC) Protocols</div>
+        <div class="section-divider"></div>
+
+        <div class="tag-label">Incident Commander (IC) Protocols 📢</div>
         <div class="sticky-note">
-            <div class="handwriting-text note-content">
-                <p>Menurut Talita, sebagai Incident Commander (IC) hal yang terpenting adalah <strong>tegas</strong>. IC diberikan kewenangan tertinggi dalam suatu insiden, sehingga segala hal yang terjadi harus dalam sepersetujuan IC.</p>
+            <div class="note-content">
+                <p>Menurut Talita, sebagai Incident Commander (IC) hal yang terpenting adalah <strong>tegas</strong>. [span_87](start_span)IC diberikan kewenangan tertinggi dalam suatu insiden, sehingga segala hal yang terjadi harus dalam sepersetujuan IC.</p>[span_87](end_span)
                 
                 <p style="font-weight:bold; color:#be185d; margin-top:10px;">Tanggung Jawab IC di Crime Scene</p>
                 <ul>
-                    <li>Wajib double check apakah seluruh evidence telah terkumpul (crime scene evidence, run plate, dsb).</li>
-                    <li>Menentukan pursuit line up: siapa yang akan menjadi primary, secondary, alternate, dan juga securing hostage.</li>
-                    <li>catat semua kejadian dan jangan lupa melengkapi mdt selengkap lengkapnya.</li>
+                    [span_88](start_span)<li>Wajib double check apakah seluruh evidence telah terkumpul (crime scene evidence, run plate, dsb).</li>[span_88](end_span)
+                    [span_89](start_span)<li>Menentukan pursuit line up: siapa yang akan menjadi primary, secondary, alternate, dan juga securing hostage.</li>[span_89](end_span)
+                    [span_90](start_span)<li>Catat semua kejadian dan jangan lupa melengkapi mdt selengkap lengkapnya.</li>[span_90](end_span)
                 </ul>
 
                 <p style="font-weight:bold; color:#be185d; margin-top:10px;">Selama Pengejaran</p>
                 <ul>
-                    <li>Sigap atas segala perubahan dan tindakan suspect.</li>
-                    <li>Jika tindakan suspect membahayakan warga atau sudah demand rules, IC harus memperhitungkan penggunaan spike trap atau PIT maneuver.</li>
-                    <li>Take tire hanya dilakukan jika situasi sudah tidak kondusif.</li>
+                    [span_91](start_span)<li>Sigap atas segala perubahan dan tindakan suspect.</li>[span_91](end_span)
+                    [span_92](start_span)<li>Jika tindakan suspect membahayakan warga atau sudah <strong>demand rules</strong>, IC harus memperhitungkan penggunaan spike trap atau PIT maneuver.</li>[span_92](end_span)
+                    [span_93](start_span)<li>Take tire hanya dilakukan jika situasi sudah tidak kondusif.</li>[span_93](end_span)
                 </ul>
 
-                <p style="font-weight:bold; color:#be185d; margin-top:10px;">Komunikasi</p>
+                <p style="font-weight:bold; color:#be185d; margin-top:10px;">Komunikasi & Ketegasan</p>
                 <ul>
-                    <li>Jangan takut menegur unit yang melakukan kesalahan.</li>
-                    <li>Jika ada officer yang menginterupsi radio dengan informasi tidak bermanfaat, IC harus tegas mengatakan "10-3".</li>
+                    [span_94](start_span)<li>Jangan takut menegur unit yang melakukan kesalahan.</li>[span_94](end_span)
+                    [span_95](start_span)<li>Jika ada officer yang menginterupsi radio dengan informasi tidak bermanfaat, IC harus tegas mengatakan "10-3".</li>[span_95](end_span)
                 </ul>
 
                 <p style="font-weight:bold; color:#be185d; margin-top:10px;">Setelah Situasi Terkendali</p>
                 <ul>
-                    <li>Pastikan semua suspect diproses sesuai prosedur.</li>
-                    <li>Pastikan MDT (Mobile Data Terminal) diselesaikan dengan rapi dan lengkap.</li>
+                    [span_96](start_span)<li>Pastikan semua suspect diproses sesuai prosedur.</li>[span_96](end_span)
+                    [span_97](start_span)<li>Pastikan MDT (Mobile Data Terminal) diselesaikan dengan rapi dan lengkap.</li>[span_97](end_span)
                 </ul>
 
                 <p style="margin-top:15px; font-style:italic; text-align:center; color:#db2777;">
                     "Seorang IC harus tegas, sigap, menguasai situasi, berani mengambil keputusan, dan tidak takut menegur. IC bukan sekadar Role, tapi tanggung jawab penuh atas jalannya sebuah insiden"
-                </p>
+                [span_98](start_span)</p>[span_98](end_span)
             </div>
         </div>
 
         <div class="footer-note">
-            By Talita cloud 
-        </div>
+            By Tota Joud 🎀
+        [span_99](start_span)</div>[span_99](end_span)
     </div>
 
     <script>
-        // Fungsi menyalakan/mematikan garis kertas horizontal
         function toggleLines() {
             var paper = document.getElementById("notePaper");
             paper.classList.toggle("lined-active");
         }
 
-        // Fungsi mengubah gaya font tulisan tangan secara massal
-        function toggleHandwriting() {
+        // Mengubah font interaktif menjadi variasi Fredoka/Quicksand agar tetap terbaca jelas
+        function toggleFont() {
             var contents = document.getElementsByClassName("note-content");
             for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.toggle("alt-handwriting");
+                contents[i].classList.toggle("alt-font");
             }
         }
     </script>
