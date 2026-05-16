@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talita Note - LSPD Field Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Patrick+Hand&family=Short+Stack&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f7e8ee;
+            font-family: 'Short Stack', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .notepad {
+            background-color: #fff0f5; 
+            width: 100%;
+            max-width: 900px;
+            min-height: 650px;
+            padding: 30px 40px 30px 60px;
+            box-shadow: 0 4px 15px rgba(220, 174, 190, 0.3);
+            border-radius: 12px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid #fbcfe8;
+        }
+
+        .notepad::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 45px;
+            width: 2px;
+            height: 100%;
+            background-color: #f472b6;
+        }
+
+        .notepad.lined-active {
+            background-image: linear-gradient(#fbcfe8 1px, transparent 1px);
+            background-size: 100% 28px;
+            line-height: 28px;
+        }
+
+        h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 34px;
+            margin: 0;
+            color: #db2777; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #65a30d; 
+            margin-top: 4px;
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #ffffff;
+            border: 1px solid #fbcfe8;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(219, 39, 119, 0.05);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: Arial, sans-serif;
+            color: #be185d;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #fdf2f8;
+            border-color: #f472b6;
+        }
+
+        .tag-label {
+            border: 1px dashed #db2777;
+            border-radius: 6px;
+            padding: 2px 10px;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            background: #fff;
+            color: #db2777;
+        }
+
+        .sticky-note {
+            background-color: #fef08a; 
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 3px 5px 12px rgba(219, 39, 119, 0.1);
+            position: relative;
+            max-width: 750px;
+            margin-top: 10px;
+            border-left: 4px solid #facc15;
+        }
+
+        .sticky-note::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            width: 50px;
+            height: 15px;
+            background-color: rgba(244, 114, 182, 0.5); 
+            transform: rotate(-2deg);
+        }
+
+        .case-title {
+            font-weight: bold;
+            color: #db2777;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .case-section {
+            margin-bottom: 15px;
+        }
+
+        .case-section ul {
+            margin: 5px 0 0 20px;
+            padding: 0;
+        }
+
+        .case-section li {
+            margin-bottom: 5px;
+        }
+
+        .sticky-note p {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #3f2b32;
+            line-height: 1.5;
+        }
+
+        .miranda-text {
+            font-family: 'Caveat', cursive;
+            font-size: 21px;
+            color: #111;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .alt-handwriting {
+            font-family: 'Patrick Hand', cursive !important;
+            font-size: 18px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notepad lined-active" id="notePaper">
+        <h1>Talita Note &ndash; LSPD Field Notes</h1>
+        <div class="subtitle">
+            "If it's not written, it didn't happen." &ndash; David Reed Officer ter NPD, Pickme, Redflag, gaslighter, bipolar, manipulatif, ocd dan masih banyak kelebihan lainnya
+        </div>
+
+        <div class="button-group">
+            <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <button class="btn" onclick="toggleLines()">📄 Toggle Lines</button>
+            <button class="btn" onclick="toggleHandwriting()">✍️ Toggle Handwriting</button>
+        </div>
+
+        <div class="tag-label">Case Conclusion</div>
+
+        <div class="sticky-note">
+            <div class="case-title">Case File: Tactical Operations & Assault Report</div>
+            
+            <div class="case-section">
+                <p><strong>1. Incident Overview & Motive</strong></p>
+                <p>• <strong>Offense:</strong> A violent assault involving a firearm (shooting) committed against two active-duty medical personnel, identified as Jeje and Ellie Miles.</p>
+                <p>• <strong>Triggering Event:</strong> The incident arose from a minor vehicular contact during an urgent dispatch. While actively responding to multiple high-priority emergency calls, the medical unit executed an emergency tactical maneuver to utilize an alternative access route. During this critical dispatch, minor contact accidentally occurred with the suspects' vehicle.</p>
+                <p>• <strong>Criminal Act:</strong> Despite immediate professional courtesy and apologies extended by the medical personnel, the male suspect initiated an unprovoked escalation, drawing a firearm and shooting Jeje once in the chest. The suspect's defense claiming the shooting was "accidental" is legally meritless, as he subsequently shot the second on-duty medical partner, Ellie Miles, who was providing operational support at the scene.</p>
+            </div>
+
+            <div class="case-section">
+                <p><strong>2. Suspect Identification Status</strong></p>
+                <p>• <strong>Primary Suspect (Male):</strong> Officially identified as <span style="color: #be185d; font-weight: bold;">Levi D. Luciano</span>. This identity was positively confirmed by the victim (Jeje), who verified with 100% certainty that the photograph provided by investigators matched the shooter at the scene (noting that the suspect was wearing a hat during the encounter).</p>
+                <p>• <strong>Accomplice (Female):</strong> Her specific identity is currently under further investigation. However, her involvement is strongly supported by physical descriptions and her attire (a hat), which match existing evidence in the Detective Division's database. Furthermore, her presence indicates a distinct modus operandi consistent with previous cases linked to Levi D. Luciano.</p>
+            </div>
+
+            <div class="case-section">
+                <p><strong>3. Evidence & Next Steps</strong></p>
+                <p>• <strong>Eyewitness Testimony:</strong> The statement from co-victim Ellie Miles serves as crucial direct evidence, corroborating the exact sequence of events at the carnival grounds since she was partnered on-duty with Jeje.</p>
+                <p>• <strong>Forensic Evidence:</strong> The post-mortem/forensic medical certificate for the victims is currently being processed and will be finalized on H+1 post-interrogation.</p>
+                <p>• <strong>Operational Recommendation:</strong> Given that the assault was targeted at public service/medical personnel actively on duty, this case warrants high priority. The case file is ready to be escalated for prosecution, and coordinated efforts to apprehend Levi D. Luciano and his female accomplice should be initiated immediately.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLines() {
+            var paper = document.getElementById("notePaper");
+            paper.classList.toggle("lined-active");
+        }
+
+        function toggleHandwriting() {
+            var elements = document.querySelectorAll(".sticky-note p, .sticky-note li");
+            elements.forEach(function(el) {
+                el.classList.toggle("alt-handwriting");
+            });
+        }
+    </script>
+
+</body>
+</html>
