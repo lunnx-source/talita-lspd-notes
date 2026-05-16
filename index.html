@@ -122,7 +122,7 @@
             color: #db2777;
         }
 
-        /* Sticky Note Kuning Lembut untuk Menjaga Kontras */
+        /* Sticky Note Kuning Lembut untuk Menjaga Kontras (Hanya untuk Miranda & lainnya) */
         .sticky-note {
             background-color: #fef08a; 
             border-radius: 4px;
@@ -162,24 +162,23 @@
             font-weight: 500;
             font-size: 16px;
             color: #111;
-            line-height: 1.6;
+            line-height: 32px; /* Disesuaikan dengan tinggi garis kertas */
+        }
+
+        /* Gaya Khusus daftar Ten Code tanpa kotak agar mengalir alami di kertas */
+        .plain-list {
+            margin: 10px 0 25px 0;
+            padding-left: 5px;
+        }
+
+        .plain-list-item {
+            margin-bottom: 0px;
+            border-bottom: transparent;
         }
 
         /* Mode Bold saat tombol Toggle Font aktif */
         .bold-active {
             font-weight: 700 !important;
-        }
-
-        /* Grid Layout untuk menyusun Kode agar Rapi seperti Dokumen Asli */
-        .code-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .code-item {
-            margin-bottom: 2px;
         }
 
         ul {
@@ -265,10 +264,10 @@
 
     <div class="notepad lined-active" id="notePaper">
         
-        <div class="sticker sticker-toys">🐰👮‍♀️ Bear 👮‍♂️🐻</div> 
+        <div class="sticker sticker-toys">🐰👮‍♀️👮‍♂️🐻</div> 
         <div class="sticker sticker-badge">💖🌟🎖️</div> 
         <div class="sticker sticker-car">🚓💨✨</div> 
-        <div class="sticker sticker-props">🔗⭐👮</div> 
+        <div class="sticker sticker-props">🔗⭐</div> 
 
         <h1>Talita LSPD Notes</h1>
         <div class="subtitle">
@@ -284,70 +283,68 @@
         <div class="tag-label">Miranda Rights 👮‍♀️</div>
         <div class="sticky-note">
             <p style="font-weight: bold; color: #db2777;">wajib membacakan miranda rights jika ingin cuff suspect:</p>
-            <p class="note-content">
+            <p class="note-content" style="line-height: 1.6;">
                 "You have the right to remain silent. Anything you say can and will be used against you in the court of law. You have the right to an attorney. If you cannot afford one, one will be provided for you."
             </p>
         </div>
 
         <div class="tag-label">Ten Codes 📋</div>
-        <div class="sticky-note">
-            <div class="note-content code-grid">
-                <div class="code-item"><strong>10-1:</strong> Meet me at...</div>
-                <div class="code-item"><strong>10-2:</strong> Good signal</div>
-                <div class="code-item"><strong>10-3:</strong> Stop Transmitting/stop pembicaraan di radio</div>
-                <div class="code-item"><strong>10-4:</strong> Roger That (OK)</div>
-                <div class="code-item"><strong>10-7:</strong> Out of Service</div>
-                <div class="code-item"><strong>10-8:</strong> In Service</div>
-                <div class="code-item"><strong>10-9:</strong> Repeat</div>
-                <div class="code-item"><strong>10-10:</strong> Fight in Progress</div>
-                <div class="code-item"><strong>10-12:</strong> Standby</div>
-                <div class="code-item"><strong>10-13A:</strong> Officer Down (Emergency)</div>
-                <div class="code-item"><strong>10-13B:</strong> Officer Down (Non-Emergency)</div>
-                <div class="code-item"><strong>10-14:</strong> EMS Down</div>
-                <div class="code-item"><strong>10-18:</strong> Quickly</div>
-                <div class="code-item"><strong>10-20:</strong> Location</div>
-                <div class="code-item"><strong>10-22:</strong> Cancel</div>
-                <div class="code-item"><strong>10-23:</strong> Arriving on Location</div>
-                <div class="code-item"><strong>10-28:</strong> Info Plate</div>
-                <div class="code-item"><strong>10-29:</strong> Checking Criminal Records</div>
-                <div class="code-item"><strong>10-31A:</strong> Crime in progress (House Robbery)</div>
-                <div class="code-item"><strong>10-31B:</strong> Crime in progress (Store Robbery)</div>
-                <div class="code-item"><strong>10-32:</strong> Man with Firearms</div>
-                <div class="code-item"><strong>10-34:</strong> Suspicious Behaviour (Narcotics)</div>
-                <div class="code-item"><strong>10-37:</strong> Suspicious Vehicle (Investigation)</div>
-                <div class="code-item"><strong>10-38:</strong> Stopping Suspicious Vehicle (Felony)</div>
-                <div class="code-item"><strong>10-41:</strong> On Duty</div>
-                <div class="code-item"><strong>10-42:</strong> Off Duty</div>
-                <div class="code-item"><strong>10-45:</strong> Illegal Hunting</div>
-                <div class="code-item"><strong>10-47:</strong> Injured Person</div>
-                <div class="code-item"><strong>10-50:</strong> Accident</div>
-                <div class="code-item"><strong>10-52:</strong> EMS Needed</div>
-                <div class="code-item"><strong>10-55:</strong> Traffic Stop</div>
-                <div class="code-item"><strong>10-57:</strong> Chase in Progress/dalam situasi pengejaran</div>
-                <div class="code-item"><strong>10-60:</strong> informasi kendaraan</div>
-                <div class="code-item"><strong>10-61:</strong> informasi suspect</div>
-                <div class="code-item"><strong>10-70:</strong> kebakaran terjadi</div>
-                <div class="code-item"><strong>10-71:</strong> Shots Fired/penembakan</div>
-                <div class="code-item"><strong>10-74:</strong> Negative</div>
-                <div class="code-item"><strong>10-76:</strong> En Route</div>
-                <div class="code-item"><strong>10-77:</strong> Need Assistance (Not Emergency)</div>
-                <div class="code-item"><strong>10-78:</strong> Need Assistance (Emergency)</div>
-                <div class="code-item"><strong>10-80:</strong> Officer in Danger, can't respond</div>
-                <div class="code-item"><strong>10-89:</strong> Bomb Threat</div>
-                <div class="code-item"><strong>10-90:</strong> Robbery in Progress (Bank/Jewel)</div>
-                <div class="code-item"><strong>10-94:</strong> Drag Racing in Progress</div>
-                <div class="code-item"><strong>10-95:</strong> Prisoner/suspect in Custody</div>
-                <div class="code-item"><strong>10-97:</strong> Unauthorized access</div>
-                <div class="code-item"><strong>10-98:</strong> Jailbreak</div>
-                <div class="code-item"><strong>10-99:</strong> Clearing off</div>
-            </div>
+        <div class="note-content plain-list">
+            <div class="plain-list-item"><strong>10-1:</strong> Meet me at...</div>
+            <div class="plain-list-item"><strong>10-2:</strong> Good signal</div>
+            <div class="plain-list-item"><strong>10-3:</strong> Stop Transmitting/stop pembicaraan di radio</div>
+            <div class="plain-list-item"><strong>10-4:</strong> Roger That (OK)</div>
+            <div class="plain-list-item"><strong>10-7:</strong> Out of Service</div>
+            <div class="plain-list-item"><strong>10-8:</strong> In Service</div>
+            <div class="plain-list-item"><strong>10-9:</strong> Repeat</div>
+            <div class="plain-list-item"><strong>10-10:</strong> Fight in Progress</div>
+            <div class="plain-list-item"><strong>10-12:</strong> Standby</div>
+            <div class="plain-list-item"><strong>10-13A:</strong> Officer Down (Emergency)</div>
+            <div class="plain-list-item"><strong>10-13B:</strong> Officer Down (Non-Emergency)</div>
+            <div class="plain-list-item"><strong>10-14:</strong> EMS Down</div>
+            <div class="plain-list-item"><strong>10-18:</strong> Quickly</div>
+            <div class="plain-list-item"><strong>10-20:</strong> Location</div>
+            <div class="plain-list-item"><strong>10-22:</strong> Cancel</div>
+            <div class="plain-list-item"><strong>10-23:</strong> Arriving on Location</div>
+            <div class="plain-list-item"><strong>10-28:</strong> Info Plate</div>
+            <div class="plain-list-item"><strong>10-29:</strong> Checking Criminal Records</div>
+            <div class="plain-list-item"><strong>10-31A:</strong> Crime in progress (House Robbery)</div>
+            <div class="plain-list-item"><strong>10-31B:</strong> Crime in progress (Store Robbery)</div>
+            <div class="plain-list-item"><strong>10-32:</strong> Man with Firearms</div>
+            <div class="plain-list-item"><strong>10-34:</strong> Suspicious Behaviour (Narcotics)</div>
+            <div class="plain-list-item"><strong>10-37:</strong> Suspicious Vehicle (Investigation)</div>
+            <div class="plain-list-item"><strong>10-38:</strong> Stopping Suspicious Vehicle (Felony)</div>
+            <div class="plain-list-item"><strong>10-41:</strong> On Duty</div>
+            <div class="plain-list-item"><strong>10-42:</strong> Off Duty</div>
+            <div class="plain-list-item"><strong>10-45:</strong> Illegal Hunting</div>
+            <div class="plain-list-item"><strong>10-47:</strong> Injured Person</div>
+            <div class="plain-list-item"><strong>10-50:</strong> Accident</div>
+            <div class="plain-list-item"><strong>10-52:</strong> EMS Needed</div>
+            <div class="plain-list-item"><strong>10-55:</strong> Traffic Stop</div>
+            <div class="plain-list-item"><strong>10-57:</strong> Chase in Progress/dalam situasi pengejaran</div>
+            <div class="plain-list-item"><strong>10-60:</strong> informasi kendaraan</div>
+            <div class="plain-list-item"><strong>10-61:</strong> informasi suspect</div>
+            <div class="plain-list-item"><strong>10-70:</strong> kebakaran terjadi</div>
+            <div class="plain-list-item"><strong>10-71:</strong> Shots Fired/penembakan</div>
+            <div class="plain-list-item"><strong>10-74:</strong> Negative</div>
+            <div class="plain-list-item"><strong>10-76:</strong> En Route</div>
+            <div class="plain-list-item"><strong>10-77:</strong> Need Assistance (Not Emergency)</div>
+            <div class="plain-list-item"><strong>10-78:</strong> Need Assistance (Emergency)</div>
+            <div class="plain-list-item"><strong>10-80:</strong> Officer in Danger, can't respond</div>
+            <div class="plain-list-item"><strong>10-89:</strong> Bomb Threat</div>
+            <div class="plain-list-item"><strong>10-90:</strong> Robbery in Progress (Bank/Jewel)</div>
+            <div class="plain-list-item"><strong>10-94:</strong> Drag Racing in Progress</div>
+            <div class="plain-list-item"><strong>10-95:</strong> Prisoner/suspect in Custody</div>
+            <div class="plain-list-item"><strong>10-97:</strong> Unauthorized access</div>
+            <div class="plain-list-item"><strong>10-98:</strong> Jailbreak</div>
+            <div class="plain-list-item"><strong>10-99:</strong> Clearing off</div>
         </div>
 
         <div class="section-divider"></div>
 
         <div class="tag-label">Response Codes & Radio Usage 🎙️</div>
         <div class="sticky-note">
-            <div class="note-content">
+            <div class="note-content" style="line-height: 1.6;">
                 <ul>
                     <li><strong>Code 1:</strong> Non-emergency response: tidak pakai sirine dan lampu ratatoar.</li>
                     <li><strong>Code 2:</strong> Emergency response: hanya menggunakan lampu ratatoar.</li>
@@ -379,23 +376,23 @@
 
         <div class="tag-label">Callsign System & Pursuit Behavior 🏎️</div>
         <div class="sticky-note">
-            <div class="note-content">
+            <div class="note-content" style="line-height: 1.6;">
                 <p style="font-weight:bold; color:#be185d;">Callsign System 📞</p>
-                <div class="code-grid">
-                    <div class="code-item">• High Command = STAFF</div>
-                    <div class="code-item">• Command = VICTOR</div>
-                    <div class="code-item">• SPV-NCO (Partner) = ADAM</div>
-                    <div class="code-item">• SPV-NCO (Solo) = LINCOLN</div>
-                    <div class="code-item">• Interceptor = HENRY</div>
-                    <div class="code-item">• Interceptor HC = GOLF</div>
-                    <div class="code-item">• Motorcycle = MARY</div>
-                    <div class="code-item">• Metro = DAVID</div>
-                    <div class="code-item">• Bearcat = BEAST</div>
-                    <div class="code-item">• K9 Unit = NORA</div>
-                    <div class="code-item">• ASD = AIR</div>
-                    <div class="code-item">• ASD High Command = AIR-STAFF</div>
-                    <div class="code-item">• Detective = GEORGE</div>
-                </div>
+                <ul>
+                    <li>High Command = STAFF</li>
+                    <li>Command = VICTOR</li>
+                    <li>SPV-NCO (Partner) = ADAM</li>
+                    <li>SPV-NCO (Solo) = LINCOLN</li>
+                    <li>Interceptor = HENRY</li>
+                    <li>Interceptor HC = GOLF</li>
+                    <li>Motorcycle = MARY</li>
+                    <li>Metro = DAVID</li>
+                    <li>Bearcat = BEAST</li>
+                    <li>K9 Unit = NORA</li>
+                    <li>ASD = AIR</li>
+                    <li>ASD High Command = AIR-STAFF</li>
+                    <li>Detective = GEORGE</li>
+                </ul>
                 
                 <p style="margin-top:15px; font-weight:bold;">How to Use Callsign (Example badge number: 72505)</p>
                 <ul>
@@ -409,7 +406,7 @@
                     <li><strong>Secondary Unit:</strong> Membantu komunikasi dan call-out.</li>
                     <li><strong>Alternate Unit:</strong> Siap untuk block road atau deploy spike strip.</li>
                 </ul>
-                <p><strong>Selama Pengejaran:</strong> Memberikan update berkala (arah, kecepatan, situasi lalu lintas), serta menjaga jarak aman dan tidak saling menabrak.</p>
+                <p style="margin-top: 10px;"><strong>Selama Pengejaran:</strong> Memberikan update berkala (arah, kecepatan, situasi lalu lintas), serta menjaga jarak aman dan tidak saling menabrak.</p>
                 <p><strong>Taktik Khusus:</strong> Spike Strip, PIT Maneuver, Box Car. *(Hanya boleh dilakukan dengan izin dari IC atau Sergeant).*</p>
             </div>
         </div>
@@ -418,7 +415,7 @@
 
         <div class="tag-label">Incident Commander (IC) Protocols 📢</div>
         <div class="sticky-note">
-            <div class="note-content">
+            <div class="note-content" style="line-height: 1.6;">
                 <p>Menurut Talita, sebagai Incident Commander (IC) hal yang terpenting adalah <strong>tegas</strong>. IC diberikan kewenangan tertinggi dalam suatu insiden, sehingga segala hal yang terjadi harus dalam sepersetujuan IC.</p>
                 
                 <p style="font-weight:bold; color:#be185d; margin-top:10px;">Tanggung Jawab IC di Crime Scene</p>
@@ -454,8 +451,23 @@
         </div>
 
         <div class="footer-note">
-            By Tota Joud 🎀
+            By Tota Cloud 🎀
         </div>
     </div>
 
     <script>
+        function toggleLines() {
+            var paper = document.getElementById("notePaper");
+            paper.classList.toggle("lined-active");
+        }
+
+        function toggleFontWeight() {
+            var contents = document.getElementsByClassName("note-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.toggle("bold-active");
+            }
+        }
+    </script>
+
+</body>
+</html>
